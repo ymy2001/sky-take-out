@@ -101,4 +101,15 @@ public class EmployeeServiceImpl implements EmployeeService {
         return employee;
     }
 
+    /*
+     * 启用禁用员工账号*/
+    @Override
+    public void ob(Integer status, Long id) {
+        //update em set s=wh id=?
+        Employee employee = Employee.builder()
+                .status(status)
+                .id(id)
+                .build();
+        employeeMapper.update(employee);
+    }
 }
