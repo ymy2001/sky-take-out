@@ -5,6 +5,7 @@ import com.sky.dto.EmployeeLoginDTO;
 import com.sky.dto.EmployeePageQueryDTO;
 import com.sky.entity.Employee;
 import com.sky.result.PageResult;
+import io.swagger.models.auth.In;
 
 public interface EmployeeService {
 
@@ -26,4 +27,12 @@ public interface EmployeeService {
     /*
      * 启用禁用员工账号*/
     void ob(Integer status, Long id);
+
+    /*
+     * 根据id查询员工信息*/
+    Employee getById(Long id);
+
+    /*
+     * 修改员工信息*/
+    void updateByBody(EmployeeDTO employeeDTO);
 }
